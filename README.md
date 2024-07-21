@@ -19,21 +19,22 @@ Then run it
 ```./<filename>```  
 e.g. ```./macos.sh```
 
-To install Ruby on Windows using the Command Line Interface (CLI), follow these steps:
+## Install the dependencies in Windows
 
-Step 1: Install a Package Manager (Chocolatey)
-Chocolatey is a package manager for Windows that simplifies the installation process. If you don't have Chocolatey installed, follow these steps:
+To install Ruby on Windows using the Command Line Interface (CLI), follow these steps:  
 
-Open PowerShell as an Administrator.
+### Step 1: Install a Package Manager (Chocolatey)
+Chocolatey is a package manager for Windows that simplifies the installation process. If you don't have Chocolatey installed, follow these steps:  
 
-Run the following command to install Chocolatey:
+1. Open PowerShell as an Administrator.
+2. Run the following command to install Chocolatey:
 
-powershell
-Copy code
+<pre>
 Set-ExecutionPolicy Bypass -Scope Process -Force; `
 [System.Net.ServicePointManager]::SecurityProtocol = `
 [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+</pre>
 Step 2: Install Ruby using Chocolatey
 Once Chocolatey is installed, you can use it to install Ruby:
 

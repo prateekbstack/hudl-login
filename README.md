@@ -11,9 +11,13 @@ The dependencies can be installed in MacOS / Ubuntu / CentOS by running one of t
 2. ubuntu.sh
 3. centos.sh
 
-```chmod +x <filename>```
-e.g.
-```chmod +x macos.sh```
+First, change the permissions of the shell file
+```chmod +x <filename>```  
+e.g. ```chmod +x macos.sh```  
+
+Then run it  
+```./<filename>```  
+e.g. ```./macos.sh```
 
 To install Ruby on Windows using the Command Line Interface (CLI), follow these steps:
 

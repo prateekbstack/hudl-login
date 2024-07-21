@@ -1,7 +1,7 @@
 # hudl-login
 
 This project is used to automate all test scenarios in the login module of [hudl.com](https://www.hudl.com).  
-Please clone this repo and install dependencies
+This uses Ruby Cucumber with Selenium. Please clone this repo and install dependencies.
 
 ## Run command for the suite
 Make sure you are in the root folder of the project. From there, run the following command.

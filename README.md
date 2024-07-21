@@ -1,5 +1,20 @@
 # hudl-login
 
+This project is used to automate all test scenarios in the login module of hudl.com
+Please clone this repo and install dependencies
+
+## Install the dependencies in MacOS / Ubuntu / CentOS
+
+The dependencies can be installed in MacOS / Ubuntu / CentOS by running one of the following shell files, named according to the relevant OS.
+
+1. macos.sh
+2. ubuntu.sh
+3. centos.sh
+
+```chmod +x <filename>```
+e.g.
+```chmod +x macos.sh```
+
 To install Ruby on Windows using the Command Line Interface (CLI), follow these steps:
 
 Step 1: Install a Package Manager (Chocolatey)

@@ -1,7 +1,8 @@
 # hudl-login
 
 This project is used to automate all test scenarios in the login module of [hudl.com](https://www.hudl.com).  
-This uses Ruby Cucumber with Selenium. Please clone this repo and install dependencies.
+This uses Ruby Cucumber with Selenium. Please clone this repo and install dependencies.  
+The dependencies needed are **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.0**
 
 ## Run command for the suite
 Make sure you are in the root folder of the project. From there, run the following command.
@@ -28,6 +29,8 @@ Then run it
 ```./<filename>```  
 e.g. ```./macos.sh```
 
+In the unlikely event that these shell files do not work, please install these manually - **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.0**
+
 ## Install the dependencies in Windows
 
 To install Ruby on Windows using the Command Line Interface (CLI), follow these steps:  
@@ -50,7 +53,7 @@ Once Chocolatey is installed, you can use it to install Ruby:
 1. Open Command Prompt or PowerShell as an Administrator.
 2. Run the following command to install Ruby:
 <pre>
-  choco install ruby --version=2.6.5.1
+  choco install ruby --version=3.2.2
   choco pin add -n=ruby
 </pre>
 

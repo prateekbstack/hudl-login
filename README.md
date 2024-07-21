@@ -1,6 +1,6 @@
 # hudl-login
 
-This project is used to automate all test scenarios in the login module of hudl.com
+This project is used to automate all test scenarios in the login module of [hudl.com](https://www.hudl.com).
 Please clone this repo and install dependencies
 
 ## Install the dependencies in MacOS / Ubuntu / CentOS

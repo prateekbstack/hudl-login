@@ -2,7 +2,7 @@
 
 This project is used to automate all test scenarios in the login module of [hudl.com](https://www.hudl.com).  
 This uses Ruby Cucumber with Selenium. Please clone this repo and install dependencies.  
-The dependencies needed are **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.0**
+The dependencies needed are **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.3**
 
 ## Run command for the suite
 Make sure you are in the root folder of the project. From there, run the following command.
@@ -29,7 +29,7 @@ Then run it
 ```./<filename>```  
 e.g. ```./macos.sh```
 
-In the unlikely event that these shell files do not work, please install these manually - **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.0**
+In the unlikely event that these shell files do not work, please install these manually - **ruby-3.2.2, cucumber-9.2.0, selenium-webdriver-4.22.0, test-unit-1.2.3**
 
 ## Install the dependencies in Windows
 

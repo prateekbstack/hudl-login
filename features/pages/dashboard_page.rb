@@ -21,6 +21,6 @@ class DashboardPage < BasePage
         snap_raise_container_locator = @driver.find_element(:id => SNAP_RAISE_CONTAINER_LOCATOR)
         @wait.until { snap_raise_container_locator.displayed? }
         assert(snap_raise_container_locator.displayed?)
-        assert(snap_raise_container_locator.text.include? 'Transform Your Fundraising')
+        assert(snap_raise_container_locator.text.include? SNAP_RAISE_TEXT)
     end
 end

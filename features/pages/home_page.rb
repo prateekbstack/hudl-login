@@ -14,7 +14,7 @@ class HomePage < BasePage
     end
 
     def load_homepage
-        @driver.navigate.to "https://www.hudl.com/"
+        @driver.navigate.to HUDL_HOMEPAGE_URL
     end
 
     def select_hudl_login

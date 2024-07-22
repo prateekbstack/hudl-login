@@ -12,7 +12,6 @@ class SignupPage < BasePage
     PASSWORD_INPUT_LOCATOR = "password-signup"
     PASSWORD_CONFIRM_INPUT_LOCATOR = "password-confirm"
     CREATE_ACCOUNT_BUTTON = "btn-signup"
-    ERROR_RED_COLOR_CODE = "rgba(185, 24, 4, 1)"
     EMAIL_LABEL_LOCATOR = "#email-signup-container label"
     EMAIL_REQUIRED_LOCATOR = "#email-signup-container span"
     REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR = "#signup-box .error-message"
@@ -36,25 +35,25 @@ class SignupPage < BasePage
     def verify_header
         header_element = @driver.find_element(:css => SIGNUP_HEADER_LOCATOR)
         @wait.until { header_element.displayed? }
-        assert_equal(header_element.text, 'Create Account')
+        assert_equal(header_element.text, SIGNUP_HEADER_OR_BUTTON_TEXT)
     end
 
     def verify_top_right_login_button
         tr_login_element = @driver.find_element(:id => TOP_RIGHT_LOGIN_BUTTON_LOCATOR)
         @wait.until { tr_login_element.displayed? }
-        assert_equal(tr_login_element.text, 'Log In')
+        assert_equal(tr_login_element.text, LOGIN_HEADER_OR_BUTTON_TEXT)
     end
 
     def verify_tc_text
         tc_element = @driver.find_element(:css => TC_CONTAINER_LOCATOR)
         @wait.until { tc_element.displayed? }
-        assert_equal(tc_element.text, 'By creating an account, you agree to our Site Terms and Privacy Policy.')
+        assert_equal(tc_element.text, TC_TEXT)
     end
 
     def verify_bottom_login_button
         bottom_login_element = @driver.find_element(:id => BOTTOM_LOGIN_BUTTON_LOCATOR)
         @wait.until { bottom_login_element.displayed? }
-        assert_equal(bottom_login_element.text, 'Log In')
+        assert_equal(bottom_login_element.text, LOGIN_HEADER_OR_BUTTON_TEXT)
     end
 
     def input_first_name(text)
@@ -113,13 +112,13 @@ class SignupPage < BasePage
     def verify_required_fields_error_message
         error_element = @driver.find_element(:css => REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR)
         @wait.until { error_element.displayed? }
-        assert(error_element.text.eql? 'Please fill in all of the required fields')
+        assert(error_element.text.eql? REQUIRED_FIELDS_ERROR_MSG_LOGIN_SIGNUP)
     end
 
     def verify_signup_errors
         signup_error_elements = @driver.find_element(:css => SIGNUP_ERROR_MESSAGE_LOCATOR)
         @wait.until { signup_error_elements.displayed? }
-        assert(signup_error_elements.text.include? 'The password you entered does not meet the requirements')
-        assert(signup_error_elements.text.include? 'The passwords you entered do not match')
+        assert(signup_error_elements.text.include? PASSWORD_CRITERIA_NOT_MET_ERROR)
+        assert(signup_error_elements.text.include? PASSWORD_MISMATCH_ERROR)
     end
 end

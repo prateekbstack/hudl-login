@@ -21,6 +21,6 @@ class FanDashboardPage < BasePage
         search_subtext_locator = @driver.find_element(:css => SEARCH_SUBTEXT_LOCATOR)
         @wait.until { search_subtext_locator.displayed? }
         assert(search_subtext_locator.displayed?)
-        assert(search_subtext_locator.text.include? 'Find livestreams, highlights, squads, and more.')
+        assert(search_subtext_locator.text.include? FAN_SEARCH_BAR_TEXT)
     end
 end

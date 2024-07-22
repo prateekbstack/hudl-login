@@ -47,13 +47,13 @@ class LoginPage < BasePage
     def verify_required_fields_error_message
         error_element = @driver.find_element(:css => REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR)
         @wait.until { error_element.displayed? }
-        assert(error_element.text.eql? 'Please fill in all of the required fields')
+        assert(error_element.text.eql? REQUIRED_FIELDS_ERROR_MSG_LOGIN_SIGNUP)
     end
 
     def verify_incorrect_email_or_password_error_message
         error_element = @driver.find_element(:css => INCORRECT_EMAIL_OR_PASSWORD_ERROR_MESSAGE_LOCATOR)
         @wait.until { error_element.displayed? }
-        assert(error_element.text.eql? "We don't recognize that email and/or password")
+        assert(error_element.text.eql? INCORRECT_EMAIL_PASSWORD_ERROR)
     end
 
     def verify_red_color_email

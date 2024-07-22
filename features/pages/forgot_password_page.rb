@@ -30,25 +30,25 @@ class ForgotPassWordPage < BasePage
     def verify_header
         header_element = @driver.find_element(:css => FORGOT_PASSWORD_HEADER_LOCATOR)
         @wait.until { header_element.displayed? }
-        assert_equal(header_element.text, 'Forgot Password')
+        assert_equal(header_element.text, FORGOT_PASSWORD_HEADER)
     end
 
     def verify_help_text
         help_text_element = @driver.find_element(:id => FORGOT_PASSWORD_HELP_TEXT_LOCATOR)
         @wait.until { help_text_element.displayed? }
-        assert_equal(help_text_element.text, "We need to verify it's you. You'll receive an email with a verification code to reset your password.")
+        assert_equal(help_text_element.text, FORGOT_PASSWORD_HELP_TEXT)
     end
 
     def verify_back_to_login_button
         back_button = @driver.find_element(:css => BACK_TO_LOGIN_BUTTON_LOCATOR)
         @wait.until { back_button.displayed? }
-        assert_equal(back_button.text, "Back to Log In")
+        assert_equal(back_button.text, BACK_TO_LOGIN_TEXT)
     end
 
     def verify_top_right_login_button
         login_button = @driver.find_element(:id => LOGIN_TOP_RIGHT_BUTTON)
         @wait.until { login_button.displayed? }
-        assert_equal(login_button.text, "Log In")
+        assert_equal(login_button.text, LOGIN_HEADER_OR_BUTTON_TEXT)
     end
 
     def input_email(text)
@@ -64,19 +64,19 @@ class ForgotPassWordPage < BasePage
     def verify_invalid_email_error_message
         error_element = @driver.find_element(:css => INVALID_EMAIL_ERROR_MESSAGE_LOCATOR)
         @wait.until { error_element.displayed? }
-        assert_equal(error_element.text, "Please enter a valid email address")
+        assert_equal(error_element.text, FORGOT_PASSWORD_INVALID_EMAIL_ERROR_TEXT)
     end
 
     def verify_email_confirmation_screen
         confirmation_box_element = @driver.find_element(:id => EMAIL_CONFIRMATION_MESSAGE_BOX_LOCATOR)
         @wait.until { confirmation_box_element.displayed? }
-        assert(confirmation_box_element.text.include? "Check Your Email")
-        assert(confirmation_box_element.text.include? "If you have an account, a reset password link has been sent to your email.")
+        assert(confirmation_box_element.text.include? FORGOT_PASSWORD_CHECK_MAIL_TEXT)
+        assert(confirmation_box_element.text.include? FORGOT_PASSWORD_RESET_PASSWORD_LINK)
     end
 
     def verify_required_fields_error_message
         error_element = @driver.find_element(:css => REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR)
         @wait.until { error_element.displayed? }
-        assert(error_element.text.eql? 'Please fill in the required field')
+        assert(error_element.text.eql? REQUIRED_FIELDS_ERROR_MSG_FORGOT_PASSWORD)
     end
 end

@@ -138,3 +138,85 @@ Then(/^I verify (facebook|google|apple) login page$/) do | website |
         @apple_page.navigate_back
     end
 end
+
+Then(/^I click on create account on login page$/) do
+    @login_page ||= LoginPage.new(@driver)
+    @login_page.click_signup_button
+end
+
+Then(/^I click on create account on signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.submit
+end
+
+Then(/^I should get red color for errors in email on signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.verify_red_color_email
+end
+
+Then(/^I should get required fields error message on signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.verify_required_fields_error_message
+end
+
+Then(/^I verify signup page elements$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.verify_signup_page_elements
+end
+
+When(/^I refresh signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.refresh_page
+    @login_page ||= LoginPage.new(@driver)
+    @login_page.click_signup_button
+end
+
+Then(/^I input first name in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_first_name('Automation')
+end
+
+Then(/^I input last name in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_last_name('User')
+end
+
+Then(/^I input random email in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_random_email
+end
+
+Then(/^I input valid password in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_password('TestTest@123')
+end
+
+Then(/^I input valid confirm password in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_confirm_password('TestTest@123')
+end
+
+Then(/^I should see fan dashboard$/) do
+    @fan_dashboard_page ||= FanDashboardPage.new(@driver)
+    @fan_dashboard_page.verify_fan_dashboard
+end
+
+Then(/^I input invalid password in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_password('Test')
+end
+
+Then(/^I input mismatching confirm password in signup page$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.input_confirm_password('Test1')
+end
+
+Then(/^I should see signup errors$/) do
+    @signup_page ||= SignupPage.new(@driver)
+    @signup_page.verify_signup_errors
+end
+
+Then(/^I verify empty email error in forgot password$/) do
+    @forgot_password_page ||= ForgotPassWordPage.new(@driver)
+    @forgot_password_page.verify_required_fields_error_message
+end

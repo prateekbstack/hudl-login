@@ -2,7 +2,6 @@
 require "selenium-webdriver"
 require "test/unit"
 class BasePage
-    include WebDriverHelper
     def initialize(driver)
         @wait = Selenium::WebDriver::Wait.new(timeout: 30)
         @driver = driver

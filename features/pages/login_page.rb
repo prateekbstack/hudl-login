@@ -20,6 +20,7 @@ class LoginPage < BasePage
     FACEBOOK_LOGIN_BUTTON_LOCATOR = "btn-facebook-login"
     GOOGLE_LOGIN_BUTTON_LOCATOR = "btn-google-login"
     APPLE_LOGIN_BUTTON_LOCATOR = "btn-apple-login"
+    SIGNUP_BUTTON_LOCATOR = "btn-show-signup"
 
     def initialize(driver)
         @driver = super(driver)
@@ -95,5 +96,11 @@ class LoginPage < BasePage
         apple_login_element = @driver.find_element(:id => APPLE_LOGIN_BUTTON_LOCATOR)
         @wait.until { apple_login_element.displayed? }
         apple_login_element.click
+    end
+
+    def click_signup_button
+       signup_element = @driver.find_element(:id => SIGNUP_BUTTON_LOCATOR)
+        @wait.until { signup_element.displayed? }
+        signup_element.click
     end
 end

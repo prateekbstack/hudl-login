@@ -15,6 +15,6 @@ class FacebookPage < BasePage
     def verify_facebook_login_header
         header_element = @driver.find_element(:id => LOGIN_HEADER_LOCATOR)
         @wait.until { header_element.displayed? }
-        assert_equal(header_element.text, 'Log in to Facebook')
+        assert_equal(header_element.text, FACEBOOK_PAGE_TEXT)
     end
 end

@@ -15,7 +15,7 @@ end
 
 And(/^I input the correct password$/) do
     @login_page ||= LoginPage.new(@driver)
-    @login_page.input_password('Expo@123')
+    @login_page.input_password('Expo@123')  #This is not the real password. Please contact Prateek Bhiwapurkar for the actual password
 end
 
 Then(/^I input empty email$/) do

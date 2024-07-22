@@ -13,6 +13,7 @@ class ForgotPassWordPage < BasePage
     CONTINUE_BUTTON_LOCATOR = "btn-reset"
     INVALID_EMAIL_ERROR_MESSAGE_LOCATOR = "#reset-box .error-message"
     EMAIL_CONFIRMATION_MESSAGE_BOX_LOCATOR = "reset-confirmation-hudl-box"
+    REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR = "#reset-box .uni-notice__content"
 
     def initialize(driver)
         @driver = super(driver)
@@ -71,5 +72,11 @@ class ForgotPassWordPage < BasePage
         @wait.until { confirmation_box_element.displayed? }
         assert(confirmation_box_element.text.include? "Check Your Email")
         assert(confirmation_box_element.text.include? "If you have an account, a reset password link has been sent to your email.")
+    end
+
+    def verify_required_fields_error_message
+        error_element = @driver.find_element(:css => REQUIRED_FIELDS_ERROR_MESSAGE_LOCATOR)
+        @wait.until { error_element.displayed? }
+        assert(error_element.text.eql? 'Please fill in the required field')
     end
 end
